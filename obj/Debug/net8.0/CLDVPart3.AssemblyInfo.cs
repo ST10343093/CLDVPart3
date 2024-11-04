@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CLDVPart3")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e5a0b28101128d0a217747fbd74781ce7bede50e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7a252786a5bcda329585e596242f85a3b615e406")]
 [assembly: System.Reflection.AssemblyProductAttribute("CLDVPart3")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CLDVPart3")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
