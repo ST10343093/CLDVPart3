@@ -1,3 +1,5 @@
+using CLDVPart3.Data;
+using Microsoft.EntityFrameworkCore;
 namespace CLDVPart3
 {
     public class Program
@@ -8,6 +10,11 @@ namespace CLDVPart3
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            //Adding DB Context builder services with options
+            builder.Services.AddDbContext<ApplicationDBContext>(options =>
+                       options.UseSqlServer(builder.Configuration.GetConnectionString("ABCRetailersDEV")));
+
 
             var app = builder.Build();
 
