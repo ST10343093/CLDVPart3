@@ -1,5 +1,6 @@
 using CLDVPart3.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 namespace CLDVPart3
 {
     public class Program
@@ -14,6 +15,11 @@ namespace CLDVPart3
             //Adding DB Context builder services with options
             builder.Services.AddDbContext<ApplicationDBContext>(options =>
                        options.UseSqlServer(builder.Configuration.GetConnectionString("ABCRetailersDEV")));
+
+            //Added service for Authorization for Role based Access
+            builder.Services.AddDefaultIdentity<IdentityUser>().AddDefaultTokenProviders()
+                           .AddRoles<IdentityRole>()
+                           .AddEntityFrameworkStores<ApplicationDBContext>();
 
 
             var app = builder.Build();
@@ -32,7 +38,7 @@ namespace CLDVPart3
             app.UseRouting();
 
             app.UseAuthorization();
-
+            app.MapRazorPages();
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
