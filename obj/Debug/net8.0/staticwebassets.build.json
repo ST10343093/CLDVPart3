@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "BcZGvEqsO3BrTjsx+xG61ZTf068FiZE/EioFYOoJHmk=",
+  "Hash": "59XBXfrEjruirq/u2LuaiWeU1FmHUCGBljP0QaBnDsU=",
   "Source": "CLDVPart3",
   "BasePath": "_content/CLDVPart3",
   "Mode": "Default",
@@ -4803,6 +4803,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\scss\\bootstrap\\scss\\vendor\\_rfs.scss"
+    },
+    {
+      "Identity": "C:\\Users\\lab_services_student\\source\\repos\\CLDVPart3\\wwwroot\\uploads\\lorem facts.pdf",
+      "SourceId": "CLDVPart3",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\lab_services_student\\source\\repos\\CLDVPart3\\wwwroot\\",
+      "BasePath": "_content/CLDVPart3",
+      "RelativePath": "uploads/lorem facts.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\lorem facts.pdf"
     }
   ]
 }

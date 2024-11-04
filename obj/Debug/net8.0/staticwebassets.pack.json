@@ -757,6 +757,10 @@
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\vendor\\_rfs.scss"
     },
     {
+      "Id": "C:\\Users\\lab_services_student\\source\\repos\\CLDVPart3\\wwwroot\\uploads\\lorem facts.pdf",
+      "PackagePath": "staticwebassets\\uploads\\lorem facts.pdf"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.CLDVPart3.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
