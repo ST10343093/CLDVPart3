@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\CLDVPart3.props" />
+</Project>
