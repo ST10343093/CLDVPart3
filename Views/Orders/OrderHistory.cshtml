@@ -1,0 +1,99 @@
+﻿@model IEnumerable<CLDVPart3.Models.OrderHistoryViewModel>
+@{
+    ViewData["Title"] = "Order History";
+}
+<div class="container-products">
+    <h2 class="page-title">Order History</h2>
+
+    <table class="order-history-table">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Order Date</th>
+                <th>Total Price</th>
+                <th>Order Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in Model)
+            {
+                <tr>
+                    <td>@order.OrderId</td>
+                    <td>@order.OrderDate</td>
+                    <td>R @order.TotalPrice.ToString("0.00")</td>
+                    <td>@order.Status</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+<style>
+
+    /* Global Styles */
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f8f9;
+        color: #333;
+        line-height: 1.6;
+    }
+
+    /* Container for Order History page */
+    .container-products {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        max-width: 1000px;
+        margin: 20px auto;
+    }
+
+    .page-title {
+        font-size: 2rem;
+        color: #2f9f3e; /* Green color for title */
+        font-weight: bold;
+        text-align: center;
+    }
+
+    /* Order History Table */
+    .order-history-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+        .order-history-table th, .order-history-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .order-history-table th {
+            background-color: #f4f8f9;
+            font-weight: bold;
+        }
+
+        .order-history-table td {
+            font-size: 1rem;
+        }
+
+        .order-history-table tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .order-history-table td:last-child {
+            text-align: center;
+        }
+
+        .order-history-table td {
+            color: #333;
+        }
+
+            /* Styling for the price column */
+            .order-history-table td:nth-child(3) {
+                font-weight: bold;
+                color: #28a745; /* Green for price */
+            }
+
+</style>

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "MkYEJ1YZ8sJ+qhq0Skp3roWEbzxsdRkG78SrP3UGTe18Olbw1uWFVobbLM5BrQXVE/TzZgORmYkOjJYCwu1Lpg==",
+  "dgSpecHash": "ZIWQPWezdFk7aJ6XF9U8hCUaps5KnwTmwJZ7BQqG9i6uy8riVVsKzoBsWNB4+ZTpC3JU2Ko2crmOt/9iMIbAIg==",
   "success": true,
   "projectFilePath": "C:\\Users\\lab_services_student\\source\\repos\\CLDVPart3\\CLDVPart3.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\lab_services_student\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
     "C:\\Users\\lab_services_student\\.nuget\\packages\\azure.storage.blobs\\12.22.2\\azure.storage.blobs.12.22.2.nupkg.sha512",
     "C:\\Users\\lab_services_student\\.nuget\\packages\\azure.storage.common\\12.21.1\\azure.storage.common.12.21.1.nupkg.sha512",
+    "C:\\Users\\lab_services_student\\.nuget\\packages\\azure.storage.queues\\12.20.1\\azure.storage.queues.12.20.1.nupkg.sha512",
     "C:\\Users\\lab_services_student\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\lab_services_student\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\lab_services_student\\.nuget\\packages\\humanizer.core.af\\2.14.1\\humanizer.core.af.2.14.1.nupkg.sha512",

@@ -22,6 +22,13 @@ namespace CLDVPart3
             // Register BlobService with configuration
             builder.Services.AddSingleton(new BlobService(configuration.GetConnectionString("AzureStorage")));
 
+            // Register QueueService with configuration
+            builder.Services.AddSingleton<QueueService>(sp =>
+            {
+                var connectionString = configuration.GetConnectionString("AzureStorage");
+                return new QueueService(connectionString); // Pass connection string only
+            });
+
             //Adding DB Context builder services with options
             builder.Services.AddDbContext<ApplicationDBContext>(options =>
                        options.UseSqlServer(builder.Configuration.GetConnectionString("ABCRetailersDEV")));

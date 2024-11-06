@@ -1,0 +1,129 @@
+﻿@model IEnumerable<CLDVPart3.Models.OrderRequest>
+
+@{
+    ViewData["Title"] = "Order Requests";
+}
+
+<div class="container-products">
+    <h1 class="page-title">Order Requests</h1>
+
+    <form asp-controller="OrderRequests" asp-action="Index" method="get" class="search-form mb-4">
+        <div class="form-group search-group">
+            <label for="searchString" class="sr-only">Search by Order ID:</label>
+            <input type="text" class="form-control form-control-sm search-input" id="searchString" name="searchString" placeholder="Search by Order ID" value="@ViewData["CurrentFilter"]" />
+            <button type="submit" class="btn btn-primary btn-sm search-btn"><i class="fa fa-search" aria-hidden="true"></i> Search</button>
+        </div>
+    </form>
+
+    <table class="order-requests-table">
+        <thead>
+            <tr>
+                <th>Order Request ID</th>
+                <th>Order ID</th>
+                <th>Product Name</th>
+                <th>Product Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.OrderRequestId)</td>
+                    <td>@Html.DisplayFor(modelItem => item.OrderId)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Product.Name)</td>
+                    <td>R @Html.DisplayFor(modelItem => item.Product.Price)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<style>
+
+    /* Global Styles */
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f8f9;
+        color: #333;
+        line-height: 1.6;
+    }
+
+    /* Container for the order requests page */
+    .container-products {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        max-width: 900px;
+        margin: 20px auto;
+    }
+
+    .page-title {
+        font-size: 2rem;
+        color: #2f9f3e; /* Green color for title */
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .search-form {
+        text-align: center;
+    }
+
+    .search-group {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .search-input {
+        padding: 8px 12px;
+        font-size: 1rem;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+        width: 200px;
+    }
+
+    .search-btn {
+        background-color: #2f9f3e;
+        color: white;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-left: 10px;
+    }
+
+        .search-btn:hover {
+            background-color: #28a745;
+        }
+
+    .order-requests-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+        .order-requests-table th, .order-requests-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .order-requests-table th {
+            background-color: #f4f8f9;
+            font-weight: bold;
+        }
+
+        .order-requests-table td {
+            font-size: 1rem;
+        }
+
+        .order-requests-table tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .order-requests-table td:last-child {
+            text-align: center;
+        }
+
+</style>

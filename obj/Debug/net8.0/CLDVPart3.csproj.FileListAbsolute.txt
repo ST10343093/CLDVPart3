@@ -304,3 +304,4 @@ C:\Users\lab_services_student\source\repos\CLDVPart3\bin\Debug\net8.0\Azure.Stor
 C:\Users\lab_services_student\source\repos\CLDVPart3\bin\Debug\net8.0\Azure.Storage.Common.dll
 C:\Users\lab_services_student\source\repos\CLDVPart3\bin\Debug\net8.0\System.ClientModel.dll
 C:\Users\lab_services_student\source\repos\CLDVPart3\bin\Debug\net8.0\System.IO.Hashing.dll
+C:\Users\lab_services_student\source\repos\CLDVPart3\bin\Debug\net8.0\Azure.Storage.Queues.dll

@@ -4,59 +4,184 @@
 }
 
 <div class="container-product">
-    <h1>Create Product</h1>
+    <h1 class="page-title">Create Product</h1>
 
     <form asp-action="Create" enctype="multipart/form-data">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <!-- Product Name -->
         <div class="form-group">
             <label asp-for="Name" class="control-label">Product Name</label>
             <input asp-for="Name" class="form-control" />
             <span asp-validation-for="Name" class="text-danger"></span>
         </div>
+
+        <!-- Product Description -->
         <div class="form-group">
             <label asp-for="ProductDescription" class="control-label">Product Description</label>
             <input asp-for="ProductDescription" class="form-control" />
             <span asp-validation-for="ProductDescription" class="text-danger"></span>
         </div>
+
+        <!-- Price -->
         <div class="form-group">
-            <label asp-for="Price" class="control-label"></label>
+            <label asp-for="Price" class="control-label">Price</label>
             <input asp-for="Price" class="form-control" type="number" step="0.01" />
             <span asp-validation-for="Price" class="text-danger"></span>
         </div>
 
+        <!-- Category -->
         <div class="form-group">
-            <label asp-for="Category" class="control-label"></label>
+            <label asp-for="Category" class="control-label">Category</label>
             <select asp-for="Category" class="form-control">
                 <option value="">-- Select Category --</option>
                 <option value="puppy-food">Puppy Food</option>
                 <option value="kitten-food">Kitten Food</option>
-                <option value="dog-treats">Dog-Treats</option>
-                <option value="cat-snacks">Car Snacks</option>
+                <option value="dog-treats">Dog Treats</option>
+                <option value="cat-snacks">Cat Snacks</option>
             </select>
             <span asp-validation-for="Category" class="text-danger"></span>
         </div>
+
+        <!-- Availability -->
         <div class="form-group">
-            <label asp-for="Availability" class="control-label"></label>
+            <label asp-for="Availability" class="control-label">Availability</label>
             <input type="checkbox" id="Availability" name="Availability" value="true" />
             <input type="hidden" name="Availability" value="false" />
             <span asp-validation-for="Availability" class="text-danger"></span>
         </div>
+
+        <!-- Product Image -->
         <div class="form-group">
             <label for="file" class="control-label">Product Image</label>
             <input type="file" class="form-control" name="file" />
             <span asp-validation-for="ImageUrlpath" class="text-danger"></span>
         </div>
+
+        <!-- Submit Button -->
         <div class="form-group">
             <input type="submit" value="Create" class="btn btn-create" />
         </div>
     </form>
-    <div>
+
+    <!-- Back to List -->
+    <div class="back-link">
         <i class="fa fa-reply" aria-hidden="true"></i><a asp-action="Index">Back to List</a>
     </div>
-
 </div>
+<style>
+    /* Global Styles */
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f8f9;
+        color: #333;
+        line-height: 1.6;
+    }
 
+    /* Container for Create Product page */
+    .container-product {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        max-width: 800px;
+        margin: 40px auto;
+    }
 
+    .page-title {
+        font-size: 2rem;
+        color: #2f9f3e; /* Green color for title */
+        font-weight: bold;
+        text-align: center;
+    }
+
+    /* Form Styling */
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+        .form-group label {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+    .form-control {
+        padding: 10px;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 100%;
+        margin-top: 5px;
+    }
+
+        .form-control:focus {
+            border-color: #2f9f3e;
+            outline: none;
+        }
+
+    /* Submit Button */
+    .btn-create {
+        background-color: #2f9f3e;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+
+        .btn-create:hover {
+            background-color: #248c2d;
+        }
+
+    /* Back to List Link */
+    .back-link {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+        .back-link a {
+            color: #2f9f3e;
+            font-size: 1rem;
+            text-decoration: none;
+        }
+
+            .back-link a:hover {
+                color: #248c2d;
+            }
+
+        .back-link i {
+            margin-right: 5px;
+        }
+
+    /* Error Messages */
+    .text-danger {
+        font-size: 0.875rem;
+        color: red;
+    }
+
+    /* Checkbox */
+    input[type="checkbox"] {
+        margin-top: 10px;
+    }
+
+    /* File Upload Styling */
+    input[type="file"] {
+        padding: 10px;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 100%;
+        margin-top: 5px;
+    }
+
+</style>
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");

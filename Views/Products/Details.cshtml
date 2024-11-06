@@ -4,19 +4,19 @@
     ViewData["Title"] = "Details";
 }
 
-<div class="container-product">
-    <h1>Details</h1>
+<div class="product-container">
+    <h1 class="page-title">Product Details</h1>
 
     <div class="product-details-container">
-        <div class="product-details-header">
-            Product Details
+        <div class="product-header">
+            <h2>Product Information</h2>
         </div>
-        <div class="product-details-content">
+        <div class="product-content">
             <div class="row">
-                <div class="col-sm-3">
+                <div class="col-sm-4">
                     <img src="@Model.ImageUrlpath" class="product-image" />
                 </div>
-                <div class="col-sm-9">
+                <div class="col-sm-8">
                     <div class="product-details-label">Name:</div>
                     <div class="product-details-value">@Model.Name</div>
 
@@ -31,15 +31,13 @@
 
                     <div class="product-details-label">Availability:</div>
                     <div class="product-details-value availability">
-                        @{
-                            if (Model.Availability.HasValue && Model.Availability.Value)
-                            {
-                                <p class="available-true">Available</p>
-                            }
-                            else
-                            {
-                                <p class="available-false">Out of Stock</p>
-                            }
+                        @if (Model.Availability.HasValue && Model.Availability.Value)
+                        {
+                            <p class="available-true">Available</p>
+                        }
+                        else
+                        {
+                            <p class="available-false">Out of Stock</p>
                         }
                     </div>
                 </div>
@@ -53,3 +51,100 @@
     </div>
 
 </div>
+
+<style>
+
+    /* Global Styles */
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f8f9;
+        color: #333;
+        line-height: 1.6;
+    }
+
+    /* Product Container */
+    .product-container {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        max-width: 900px;
+        margin: 40px auto;
+    }
+
+    .page-title {
+        font-size: 2rem;
+        color: #333;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .product-details-container {
+        margin-bottom: 20px;
+    }
+
+    .product-header {
+        font-size: 1.5rem;
+        color: #333;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    .product-content .row {
+        margin-bottom: 20px;
+    }
+
+    /* Product Details Labels */
+    .product-details-label {
+        font-weight: bold;
+        color: #333;
+        margin-top: 10px;
+    }
+
+    .product-details-value {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+
+    /* Product Image */
+    .product-image {
+        max-width: 100%;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+    }
+
+    /* Availability */
+    .available-true {
+        color: green;
+        font-weight: bold;
+    }
+
+    .available-false {
+        color: red;
+        font-weight: bold;
+    }
+
+    /* Buttons */
+    .btn-primary, .btn-secondary {
+        background-color: #3498db;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+
+        .btn-primary:hover, .btn-secondary:hover {
+            background-color: #2980b9;
+        }
+
+    /* Product Options */
+    .product-options {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+</style>

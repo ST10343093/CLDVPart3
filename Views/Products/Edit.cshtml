@@ -4,9 +4,8 @@
     ViewData["Title"] = "Edit";
 }
 
-
 <div class="edit-product">
-    <h1>Edit Product</h1>
+    <h1 class="page-title">Edit Product</h1>
     <h4>Product Details</h4>
     <hr />
 
@@ -15,41 +14,40 @@
         <input type="hidden" asp-for="ProductId" />
 
         <div class="form-group">
-            <label asp-for="Name" class="control-label"></label>
+            <label asp-for="Name" class="control-label">Product Name</label>
             <input asp-for="Name" class="form-control" />
             <span asp-validation-for="Name" class="text-danger"></span>
         </div>
 
         <div class="form-group">
-            <label asp-for="ProductDescription" class="control-label"></label>
+            <label asp-for="ProductDescription" class="control-label">Product Description</label>
             <input asp-for="ProductDescription" class="form-control" />
             <span asp-validation-for="ProductDescription" class="text-danger"></span>
         </div>
 
         <div class="form-group">
-            <label asp-for="Price" class="control-label"></label>
+            <label asp-for="Price" class="control-label">Price</label>
             <input asp-for="Price" class="form-control" type="number" step="0.01" />
             <span asp-validation-for="Price" class="text-danger"></span>
         </div>
 
-
         <div class="form-group">
-            <label asp-for="Category" class="control-label"></label>
+            <label asp-for="Category" class="control-label">Category</label>
             <select asp-for="Category" class="form-control">
                 <option value="">-- Select a Category --</option>
                 <option value="puppy-food">Puppy Food</option>
                 <option value="kitten-food">Kitten Food</option>
-                <option value="dog-treats">Dog-Treats</option>
-                <option value="cat-snacks">Car Snacks</option>
+                <option value="dog-treats">Dog Treats</option>
+                <option value="cat-snacks">Cat Snacks</option>
             </select>
             <span asp-validation-for="Category" class="text-danger"></span>
         </div>
 
         <div class="form-group">
-            <label asp-for="Availability" class="control-label"></label>
+            <label asp-for="Availability" class="control-label">Availability</label>
             <select asp-for="Availability" class="form-control">
-                <option value="True">True</option>
-                <option value="False">False</option>
+                <option value="True">Available</option>
+                <option value="False">Out of Stock</option>
             </select>
             <span asp-validation-for="Availability" class="text-danger"></span>
         </div>
@@ -62,12 +60,13 @@
         </div>
 
         <div class="form-group">
-            <input type="submit" value="Save" class="btn btn-primary btn-edit" />
+            <input type="submit" value="Save Changes" class="btn btn-primary btn-save" />
         </div>
     </form>
 
-    <div>
-        <i class="fa fa-reply" aria-hidden="true"></i><a asp-action="Index">Back to List</a>
+    <div class="back-link">
+        <i class="fa fa-reply" aria-hidden="true"></i>
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
     </div>
 </div>
 
@@ -76,3 +75,101 @@
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 }
+
+<style>
+    /* Global Styles */
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f8f9;
+        color: #333;
+        line-height: 1.6;
+    }
+
+    /* Edit Product Container */
+    .edit-product {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        max-width: 800px;
+        margin: 40px auto;
+    }
+
+    .page-title {
+        font-size: 2rem;
+        color: #333;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    h4 {
+        font-size: 1.25rem;
+        color: #555;
+        margin-bottom: 20px;
+    }
+
+    hr {
+        border-top: 1px solid #eee;
+        margin: 20px 0;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+        .form-group label {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+    .form-control {
+        width: 100%;
+        padding: 8px;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+        .form-control:focus {
+            border-color: #3498db;
+            box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+        }
+
+    .text-danger {
+        color: #e74c3c;
+    }
+
+    .btn-save {
+        background-color: #3498db;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+
+        .btn-save:hover {
+            background-color: #2980b9;
+        }
+
+    .back-link {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .btn-secondary {
+        background-color: #7f8c8d;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 4px;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+
+        .btn-secondary:hover {
+            background-color: #95a5a6;
+        }
+</style>

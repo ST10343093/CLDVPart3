@@ -1,27 +1,88 @@
 ﻿@using Microsoft.AspNetCore.Identity;
 @model IEnumerable<IdentityRole>
+
 @{
     ViewData["Title"] = "Application Roles";
 }
-<h1>View Roles</h1>
-<p>
-    <a asp-action="Create">Create Role</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>@Html.DisplayNameFor(model => model.Id)</th>
-            <th>@Html.DisplayNameFor(model => model.Name)</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@Html.DisplayFor(modelItem => item.Id)</td>
-                <td>@Html.DisplayFor(modelItem => item.Name)</td>
-            </tr>
+
+<div class="container">
+    <h1 class="text-center mt-4" style="color: var(--primary);">View Roles</h1>
+    <p class="text-center">
+        <a asp-action="Create" class="btn btn-primary my-3">Create Role</a>
+    </p>
+
+    <div class="table-responsive">
+        <table class="table table-striped table-hover align-middle">
+            <thead class="bg-secondary text-light">
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Id)</th>
+                    <th>@Html.DisplayNameFor(model => model.Name)</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-primary me-2">Edit</a>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+ <style>
+
+    /* Table Styles */
+    .table {
+        color: var(--dark);
+        background-color: var(--light);
+    }
+
+        .table thead {
+            background-color: var(--secondary);
+            color: #ffffff;
         }
-    </tbody>
-</table>
+
+        .table tbody tr:hover {
+            background-color: rgba(122, 183, 48, 0.1); /* Subtle hover effect */
+        }
+
+    /* Button Styles */
+    .btn-primary {
+        background-color: var(--primary);
+        border: none;
+    }
+
+    .btn-danger {
+        background-color: #ff4d4d; /* Custom color for delete button */
+        border: none;
+    }
+
+    .btn:hover {
+        opacity: 0.85;
+    }
+
+    /* Container and Text Alignment */
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    h1 {
+        font-weight: bold;
+    }
+
+    .table td, .table th {
+        vertical-align: middle;
+    }
+
+
+ </style>                       
